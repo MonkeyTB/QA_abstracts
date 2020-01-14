@@ -17,15 +17,19 @@ df = pd.read_csv(train_path,encoding='utf-8')
 
 # 对缺失数据的行删除---处理方式一
 df = df.dropna(how='any')
-
+# 创建停用词
+def stopwordslist(filepath):
+    stopwords = [line.strip() for line in open(filepath, 'r', encoding='utf-8').readlines()]
+    return stopwords
+stopwords = stopwordslist('../data/哈工大停用词.txt')
 # 切词操作
 def text_cut(texts):
 	sentences = ''
 	texts = re.sub(r'\[|\]',' ',texts) # 正则掉[]
-	texts = texts.replace(' ','').replace('(','（').replace(')','）').split('|')
+	texts = texts.replace(' ','').replace('--','').replace('(','（').replace(')','）').split('|')
 	for i in range(len(texts)):
 		cut = list(jieba.cut(texts[i],cut_all=False))
-		sentences += '	'.join(str(m) for m in cut)
+		sentences += '	'.join(str(m) for m in cut if m not in stopwords)
 		sentences += '	'
 
 	return sentences
