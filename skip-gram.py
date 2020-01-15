@@ -117,7 +117,7 @@ with train_graph.as_default():
 	inputs = tf.placeholder(tf.int32,shape=[None],name = 'inputs')
 	labels = tf.placeholder(tf.int32,shape=[None,None],name = 'labels')
 vocab_size = len(int2vocab)
-embedding_size = 300
+embedding_size = 100
 print(vocab_size)
 with train_graph.as_default():
 	# 嵌入层权重矩阵
@@ -199,12 +199,12 @@ with tf.Session(graph = train_graph) as sess:
 				# 计算similarity
 				sim = similarity.eval()
 				for i in range(valid_size):
-					valid_word = int_to_vocab[valid_examples[i]]
+					valid_word = int2vocab[valid_examples[i]]
 					top_k = 8  # 取最相似单词的前8个
 					nearest = (-sim[i, :]).argsort()[1:top_k + 1]
 					log = 'Nearest to [%s]:' % valid_word
 					for k in range(top_k):
-						close_word = int_to_vocab[nearest[k]]
+						close_word = int2vocab[nearest[k]]
 						log = '%s %s,' % (log, close_word)
 					print(log)
 				print('*' * 100)
