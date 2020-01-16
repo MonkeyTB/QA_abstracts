@@ -26,12 +26,12 @@ stopwords = stopwordslist('../data/哈工大停用词.txt')
 def text_cut(texts):
 	sentences = ''
 	texts = re.sub(r'\[|\]',' ',texts) # 正则掉[]
+	# 句子中多余的空格去掉
 	texts = texts.replace(' ','').replace('--','').replace('(','（').replace(')','）').split('|')
 	for i in range(len(texts)):
 		cut = list(jieba.cut(texts[i],cut_all=False))
 		sentences += '	'.join(str(m) for m in cut if m not in stopwords)
 		sentences += '	'
-
 	return sentences
 
 text_list = []
@@ -39,6 +39,7 @@ for i in range(len(df)):
 	sentences = ''
 	for j in range(1,5):
 		sentences += text_cut(df.iloc[i][j])
+		sentences += '\n'
 	text_list.append(sentences)
 
 # 先创建并打开一个文本文件
