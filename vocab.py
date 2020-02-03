@@ -25,7 +25,7 @@ def stopwordslist(filepath):
 stopwords = stopwordslist('../data/哈工大停用词.txt')
 # 切词操作
 def text_cut(texts):
-	texts = re.sub(r'\[|\]',' ',texts) # 正则掉[]
+	texts = re.sub(r'[!\[\]]+|[:：()（）\|…]+',' ',texts) # 正则掉[]
 	texts = texts.replace(' ','').replace('--','').replace('(','（').replace(')','）').split('|')
 	for i in range(len(texts)):
 		sentences = list(jieba.cut(str(texts[i]),cut_all=False))
@@ -57,3 +57,17 @@ for k, v in vocab_dict.items():
 file.close()
 end_time = time.time()
 print(end_time-start_time)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
