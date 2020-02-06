@@ -111,13 +111,38 @@ def build_dataset(train_data_path, test_data_path):
     return train_df['X'], train_df['Y'], test_df['X'], wv_model
 
 
+def transform_data(sentence, vocab):
+    """
+    word 2 index
+    :param sentence: [word1,word2,word3, ...] ---> [index1,index2,index3 ......]
+    :param vocab: 词表
+    :return: 转换后的序列
+    """
+    # 字符串切分成词
+    words = sentence.split(' ')
+    # 按照vocab的index进行转换         # 遇到未知词就填充unk的索引
+    ids = [vocab[word] if word in vocab else vocab['<UNK>'] for word in words]
+    return ids
+
+def preprocess_sentence(sentence, max_len, vocab):
+    """
+    单句话处理 ,方便测试
+    """
+    # 1. 切词处理
+    sentence = sentence_proc(sentence)
+    # 2. 填充
+    sentence = pad_proc(sentence, max_len, vocab)
+    # 3. 转换index
+    sentence = transform_data(sentence, vocab)
+    return np.array([sentence])
+
 def get_max_len(data):
     """
     获得合适的最大长度值
     :param data: 待统计的数据  train_df['Question']
     :return: 最大长度值
     """
-    max_lens = data.apply(lambda x: x.count(' '))
+    max_lens = data.apply(lambda x: x.count(' ') + 1)
     return int(np.mean(max_lens) + 2 * np.std(max_lens))
 
 
@@ -134,7 +159,7 @@ def pad_proc(sentence, max_len, vocab):
     # 3. 填充< start > < end >
     sentence = ['<START>'] + sentence + ['<STOP>']
     # 4. 判断长度，填充　< pad >
-    sentence = sentence + ['<PAD>'] * (max_len + 2 - len(words))
+    sentence = sentence + ['<PAD>'] * (max_len - len(words))
     return ' '.join(sentence)
 
 
