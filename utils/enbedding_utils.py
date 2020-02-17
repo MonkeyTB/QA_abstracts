@@ -5,10 +5,12 @@ from tensorflow.keras.preprocessing.text import Tokenizer
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 
 
-def tokenize(lines, max_len, num_words=500):
-    tokenizer = Tokenizer(filters='', num_words=num_words)
-    tokenizer.fit_on_texts(lines)
-    word_index = tokenizer.word_index
-    tensor = tokenizer.texts_to_sequences(lines)
-    tensor = pad_sequences.pad_sequences(tensor, padding='post', max_len=max_len)
-    return tensor, tokenizer, word_index
+def tokenize(lang):
+    lang_tokenizer = Tokenizer(
+        filters='')
+    lang_tokenizer.fit_on_texts(lang)
+
+    tensor = lang_tokenizer.texts_to_sequences(lang)
+
+    tensor = pad_sequences(tensor, padding='post')
+    return tensor, lang_tokenizer
