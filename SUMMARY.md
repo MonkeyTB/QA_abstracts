@@ -15,7 +15,6 @@
 ## 自然语言处理
 
 * [1、文本分类](zi-ran-yu-yan-chu-li/wen-ben-fen-lei.md)
-* [2、词向量](zi-ran-yu-yan-chu-li/2-ci-xiang-liang.md)
 
 ## 读书记录
 
