@@ -15,6 +15,7 @@
 ## 自然语言处理
 
 * [1、文本分类](zi-ran-yu-yan-chu-li/wen-ben-fen-lei.md)
+* [2、seq2seq](zi-ran-yu-yan-chu-li/2-seq2seq.md)
 
 ## 读书记录
 
