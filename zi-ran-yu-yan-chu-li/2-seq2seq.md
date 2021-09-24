@@ -30,3 +30,11 @@ seq2seq是一种重要的RNN模型，也称为Encoder-Decoder模型，可以理�
 
 ·  第三种Decoder，再第二种的基础上，每个神经元的输入有了两部分，一部分是Encoder编码信息 $$c$$，另一部分是Decoder上个神经元的输出，两部分通过不同的权重矩阵来作为当前神经元的输入。
 
+## 使用trick
+
+### Attention
+
+### Teccher Forcing
+
+### Beam Search
+
