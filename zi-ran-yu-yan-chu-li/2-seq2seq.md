@@ -50,9 +50,13 @@ Attention需要保留Encoder每一个神经元的隐藏层向量 $$h$$ ，然后
 
 ![Attention &#x76F8;&#x5173;&#x6027;](../.gitbook/assets/image%20%283%29.png)
 
+ 上面得到相关性向量 $$e_{t}$$  后，需要进行归一化，使用 softmax 归一化。然后用归一化后的系数融合 Encoder 的多个隐藏层向量得到 Decoder 当前神经元的上下文向量 $$c_{t}$$ ：
 
+总体流程图
 
-### Teccher Forcing
+![Attention &#x603B;&#x4F53;&#x6D41;&#x7A0B;&#x56FE;](../.gitbook/assets/image%20%289%29.png)
+
+### Teacher Forcing
 
 ### Beam Search
 
