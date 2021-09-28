@@ -70,6 +70,8 @@ Teacher Forcing在一定程度上可以解决这个问题，在训练阶段，De
 
 ### Beam Search
 
+Beam Search 方法不用于训练的过程，而是用在测试的。在每一个神经元中，我们都选取当前输出概率值最大的 **top k** 个输出传递到下一个神经元。下一个神经元分别用这 k 个输出，计算出 L 个单词的概率 \(L 为词汇表大小\)，然后在 kL 个结果中得到 **top k** 个最大的输出，重复这一步骤。
+
 ## 参考
 
 [https://www.jianshu.com/p/80436483b13b](https://www.jianshu.com/p/80436483b13b)
