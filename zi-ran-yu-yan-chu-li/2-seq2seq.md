@@ -56,7 +56,7 @@ Attention需要保留Encoder每一个神经元的隐藏层向量 $$h$$ ，然后
 
 总体流程图
 
-![&#x603B;&#x4F53;&#x6D41;&#x7A0B;](../.gitbook/assets/image%20%283%29.png)
+![](../.gitbook/assets/image%20%2814%29.png)
 
 ### Teacher Forcing
 
