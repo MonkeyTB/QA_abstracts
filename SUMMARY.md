@@ -16,8 +16,8 @@
 
 * [1、文本分类](zi-ran-yu-yan-chu-li/wen-ben-fen-lei.md)
 * [2、seq2seq](zi-ran-yu-yan-chu-li/2-seq2seq.md)
+* [3、信息抽取](zi-ran-yu-yan-chu-li/3-xin-xi-chou-qu.md)
 
 ## 读书记录
 
 * [学习一门爱的语言](du-shu-ji-lu/xue-xi-yi-men-ai-de-yu-yan.md)
-
