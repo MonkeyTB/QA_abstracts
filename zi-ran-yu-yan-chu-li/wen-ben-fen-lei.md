@@ -28,7 +28,7 @@ description: 文本分类调研综述
 
 ![](https://g22h5luj8j.feishu.cn/space/api/box/stream/download/asynccode/?code=MmY1ZWI5Njc2MTNkNGY2MmE1ZTU0OTAyYTJlMTZhN2RfNGhFZlNiOUVhUHRZUjYzdm1SajNqNzJDSENwazZZMmFfVG9rZW46Ym94Y25tTUhTaEVPeVZNWEs2N24zQWtPc0hoXzE2MzEwODc0Mzc6MTYzMTA5MTAzN19WNA)![](https://g22h5luj8j.feishu.cn/space/api/box/stream/download/asynccode/?code=MjQyMjcyMGQ5ZmFhODQzZmRmNzliMjUyMWRlMmM1ZjJfenVqYUJPdG5FZ2l1dGVQb1BxWXJsVmhRbTRQc0d0RHFfVG9rZW46Ym94Y24wTkZqcW5pd3lWSEJPczZTRThib1BnXzE2MzEwODc0Mzc6MTYzMTA5MTAzN19WNA)
 
-* \$$c\_l(w\_i)\$$用公式一计算，其中\$$c\_l(w\_{i-1})\$$是当前 word 的左侧的 context，\$$e(w\_{i-1})\$$是单词的嵌入，稠密向量
+* $$c_l(w_i)$$用公式一计算，其中\$$c\_l(w\_{i-1})\$$是当前 word 的左侧的 context，\$$e(w\_{i-1})\$$是单词的嵌入，稠密向量
 
 1. TextCNN比较类似，都是把文本表示为一个嵌入矩阵，再进行卷积操作。不同的是TextCNN中的文本嵌入矩阵每一行只是文本中一个词的向量表示，而在RCNN中，文本嵌入矩阵的每一行是当前词的词向量以及上下文嵌入表示的拼接
 
