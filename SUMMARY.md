@@ -17,6 +17,7 @@
 * [1、文本分类](zi-ran-yu-yan-chu-li/wen-ben-fen-lei.md)
 * [2、seq2seq](zi-ran-yu-yan-chu-li/2-seq2seq.md)
 * [3、信息抽取](zi-ran-yu-yan-chu-li/3-xin-xi-chou-qu.md)
+* [4、论文 A Neural Probabilistic Language Model](zi-ran-yu-yan-chu-li/4-lun-wen-aneural-probabilistic-language-model.md)
 
 ## 读书记录
 
