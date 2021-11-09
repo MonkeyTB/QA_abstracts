@@ -21,3 +21,21 @@ description: 神经概率语言模型
 * 它不考虑超过1到2个单词的上下文
 * 不考虑单词之间的“相似性”
 
+### Fighting the Curse of Dimensionality with Distributed Representations
+
+论文提出方法思想总结如下：
+
+&#x20; 1\. 将vocabulary的每个单词关联到一个分布式单词特征上（$$R^m$$）
+
+&#x20; 2\. 将词序列中的词的特征向量表示为词序列的联合概率函数
+
+&#x20; 3\. 同时学习单词特征向量和联合概率函数的参数
+
+特征向量的不同维度表示单词的不同方位，每个单词的都与向量空间中的一个点相关联，特征的维度m远小于词汇表大小，概率函数表述为给定前一个词的情况下下个词的条件概率的乘积
+
+### A Neural Model
+
+论文提出的模型结构如下图所示：
+
+![Neural architecture](<../.gitbook/assets/image (20).png>)
+
